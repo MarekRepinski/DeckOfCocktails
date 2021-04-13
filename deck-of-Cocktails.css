@@ -1,0 +1,385 @@
+/* Main Body element */
+body {
+    background-color:#87ceff;
+    height: 100vh;
+    display: flex;
+}
+
+/* Get rid of ugly marking when focused */
+div:focus {outline: white solid 1px;}
+
+/* Setting up the main grid */
+#grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr minmax(0px, 150px) minmax(100px, 150px) minmax(100px, 150px) minmax(0px, 150px) 1fr;
+    grid-template-rows: 80px 480px 80px;
+    justify-content: center;
+    text-align: center;
+}
+
+/*---------------------------------------*/
+/*        Navigation and menu bar        */
+/*---------------------------------------*/
+
+/* Setting up the nav-tag in Nav and Menu */
+nav {
+    background-color:#73c3ff;
+    display: flex;
+    height: 3.1rem;
+    flex-direction: row;
+    max-width: 600px;
+    z-index: 1;
+}
+
+/* Setting up the Header in Nav and Menu */
+.header {
+    position: relative;
+    grid-column: 2 / 6;
+    grid-row: 1;
+    margin-top: 0px;
+}
+
+/* Header/title in Nav and Menu */
+.header-text {
+    font-size: 1.4rem;
+    color: white;
+    align-self: center;
+    font-weight: bold;
+}
+
+/* Image/logo in Nav and Menu */
+.logo {
+    height: 2.8rem;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Push icons to the left */
+.push {
+    margin-left: auto;
+    justify-self: right;
+    z-index: inherit;
+}
+
+/* The search window */
+#search-container{
+    display: none;
+    grid-column: 2 / 6;
+    grid-row: 2;
+    height: fit-content;
+    width: 240px;
+    justify-self: right;
+    margin-top: -40px;
+    margin-right: 60px;
+    background-color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    box-shadow: 3px 3px 10px black;
+    align-content: center;
+    z-index: 45;
+}
+
+/* Toggle to show the search window */
+#search-container.show{
+    display: block;
+}
+
+/* The search button */
+.search-button {
+    width: 70px;
+    padding: 3px;
+    margin-left: 5px;
+}
+
+/* The drop down menu */
+#menu-dd{
+    display: none;
+    grid-column: 2 / 6;
+    grid-row: 2;
+    height: fit-content;
+    width: fit-content;
+    justify-self: right;
+    margin-top: -40px;
+    margin-right: 20px;
+    background-color: white;
+    font-size: 1.2rem;
+    box-shadow: 3px 3px 10px black;
+    padding: 8px;
+    z-index: 45;
+}
+
+/* Toggle to show the drop down menu */
+#menu-dd.show{
+    display: block;
+}
+
+/* The options in the drop down menu */
+.menu-option{
+    color: #419add;
+    font-family: Tahoma, sans-serif;
+    padding: 3px 10px 3px 10px;
+    text-align: left;
+}
+
+/*---------------------------------------*/
+/*              Detail Card              */
+/*---------------------------------------*/
+
+/* Setting up the grid in detail card */
+#detail-grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px 1fr 1fr 40px;
+    justify-content: left;
+}
+
+/* Header in detail card */
+#detail-header {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    margin-top: 15px;
+    justify-self: center;
+}
+
+/* Ingredients in detail card */
+#detail-ingredients{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+/* Image in detail card */
+#detail-img{
+    grid-column: 2;
+    grid-row: 2;
+    margin-right: 10px;
+}
+
+/* Instructions in detail card */
+#detail-intructions{
+    grid-column: 1 / 3;
+    grid-row: 3;
+}
+
+/* Back-button in detail card */
+#detail-back{
+    grid-column: 1 / 3;
+    grid-row: 4;
+    justify-self: center;
+    font-weight: bold;
+    color: #0000EE;
+}
+
+/* Class of a created (in js function detailUI(lang)) name entry in detail card */
+.header-detail{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Class of a created (in js function detailUI(lang)) ingredient entry in detail card */
+.ingredients {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    font-size: 1.0rem;
+    text-align: center;
+    padding-left: 10px;
+}
+
+/*  Classes of a header for ingredients and instrucctions in detail card 
+    created in js function detailUI(lang) and detailUIInstructions(lang) */
+.ingredientsHeader, .instructionsHeader {
+    font-size: 1.2rem;
+    font-style: italic;
+    text-decoration: underline;
+    justify-self: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Differenses from above */
+.instructionsHeader {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* Differenses from above */
+.instructions{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 93%;
+    font-size: 1.0rem;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*  Flag images container in detail card
+    created in js function detailUIInstructions(lang) */
+.flags {
+    text-decoration: none;
+    margin-bottom: 5px;
+    z-index: 35;
+}
+
+/*  Flag images in detail card
+    created in js function detailUIInstructions(lang) */
+    .flag {
+    height: 1.2rem;
+}
+
+/*---------------------------------------*/
+/*                The Deck               */
+/*---------------------------------------*/
+
+/* Position and size for the cards (including the detail card) */
+.card-bottom, .card-top, .card-prev, .card-middle, .card-detail {
+    position: relative;
+    height: 95%;
+    width: 92%;
+    grid-column: 3 / 5;
+    grid-row: 2;
+}
+
+/* Differenses for the bottom card */
+.card-bottom {
+    margin-top: 8px;
+    margin-left: 8px;
+    z-index: 2;
+}
+
+/* Differenses for the top card */
+.card-top {
+    z-index: 10;
+}
+
+/* Differenses for the previuos card */
+.card-prev {
+    grid-column: 2 / 4;
+}
+
+/* Differenses for the middle card */
+.card-middle {
+    margin-top: 4px;
+    margin-left: 4px;
+    z-index: 5;
+}
+
+/* Differenses for the detail card */
+.card-detail {
+    grid-column: 2 / 6;
+    grid-row: 1 / -1;
+}
+
+/* Regular features for card backsides */
+.card-back {
+    border-radius: 3%;
+    border: 10px solid white;
+    box-shadow: 3px 3px 10px black;
+    grid-column: 3 / 5;
+    grid-row: 2;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: inherit;
+}
+
+/* Regular features for the card frontsides (including the detail card) */
+#front-card, #front-prev-card, #front-detail-card {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: oldlace;
+    border-radius: 3%;
+    border: 10px solid white;
+    box-shadow: 3px 3px 10px black;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transform: rotateY(270deg);
+    opacity: 0;
+    z-index: 15;
+}
+
+/* Differenses for the detail card */
+#front-detail-card {
+    display: none;
+    width: 80%;
+    margin-left: 11%;
+    transform: rotateY(0deg);
+    opacity: 1;
+    z-index: 30;
+}
+
+/* Detail card show toggle */
+#front-detail-card.show {
+    display: flex;
+}
+
+/* Differenses for the previuos card */
+#front-prev-card {
+    z-index: 20;
+}
+
+/* Topline (no. of) and drink name in front side of regular cards */
+.noOf, .drinkName {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Differenses for the topline */
+.noOf {
+    margin-top: 10px;
+}
+
+/* Other text in front side of a regular card */
+.infoText {
+    padding: 10px;
+}
+
+/* Other text in front side of a regular card */
+.thumb {
+    padding: 10px 15px 10px 15px;
+    height: 90%;
+    width: 90%;
+    object-fit: cover;
+}
+
+/* Image of the back side of a card */
+.back-img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+/*---------------------------------------*/
+/*            Navigation buttons         */
+/*---------------------------------------*/
+
+/* The look of the navigationbuttons */
+button {
+    width: 50%;
+    align-self: center;
+    z-index: 25;
+}
+
+/* Leftbutton - pick up the last card and put it in front */
+#leftButton {
+    grid-column: 3;
+    grid-row: 3;
+    justify-content: left;
+}
+
+/* Rightbutton */
+#rightButton {
+    grid-column: 4;
+    grid-row: 3;
+    justify-self: right;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deck of Cocktails</title>
+    <link rel="stylesheet" href="deck-of-Cocktails.css">
+    <script src="deck-of-Cocktails.js" defer></script>
+</head>
+
+<body>
+    <main id="grid">
+        <section class="header">
+            <nav>
+                <img class="logo" src="deck of cards.png" alt="">
+                <div class="header-text">Deck of Cocktails</div>
+                <div class="push">
+                    <img id="open-search" class="logo" src="Magnifying Glass.png" alt="">
+                </div>
+                <div id="menu-container">
+                    <img id="open-menu" class="logo" src="menu.png" alt="">
+                </div>
+            </nav>
+        </section>
+        <div tabindex="1" id="search-container">
+            <input type="text" id="search-input" size="15" value="">
+            <button id="search" class="search-button" type="button">Search</button>
+        </div>
+        <div tabindex="2" id="menu-dd">
+            <div id="random" class="menu-option">Random Drink</div>
+            <div id="ordinary-drink" class="menu-option">Ordinary Drink</div>
+            <div id="cocktail" class="menu-option">Cocktail</div>
+            <div id="shot" class="menu-option">Shot</div>
+            <div id="beer" class="menu-option">Beer</div>
+            <div id="non-alcoholic" class="menu-option">Non Alcoholic</div>
+        </div>
+        <section id="detail-card" class="card-detail">
+            <div id="front-detail-card">
+                <div id="detail-grid">
+                    <div id="detail-header"></div>
+                    <div id="detail-ingredients"></div>
+                    <div id="detail-img"></div>
+                    <div id="detail-intructions"></div>
+                    <div id="detail-back">Back</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prev-card" class="card-prev">
+            <div id="front-prev-card">
+            </div>
+        </section>
+
+        <section id="bottom-card" class="card-bottom">
+            <div id="backside-bottom-card" class="card-back">
+                <img class="back-img" src="simple.png" alt="">
+            </div>
+        </section>
+
+        <section id="middle-card" class="card-middle">
+            <div class="card-back">
+                <img class="back-img" src="simple.png" alt="">
+            </div>
+        </section>
+
+        <section id="top-card" class="card-top">
+            <div id="front-card">
+            </div>
+            <div id="backside-front-card" class="card-back">
+                <img class="back-img" src="simple.png" alt="">
+            </div>
+        </section>
+
+        <button id="leftButton" type="button">
+            &leftarrow;
+        </button>
+        <button id="rightButton" type="button">
+            &rightarrow;
+        </button>
+    </main>
+</body>
+
+</html>

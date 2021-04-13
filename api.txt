@@ -1,0 +1,15 @@
+Punch%20%2F%20Party%20Drink
+Coffee%20%2F%20Tea
+cocktail			(Pegu Club)
+Ordinary%20Drink		(Cuba Libre)
+Shot
+Beer
+Homemade%20Liqueur
+Soft%20Drink%20%2F%20Soda
+Milk%20%2F%20Float%20%2F%20Shake
+
+Other%20%2F%20Unknown
+Cocoa
+
+https://www.thecocktaildb.com/api/json/v1/1/search.php?f=k
+https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Milk%20%2F%20Float%20%2F%20Shake
